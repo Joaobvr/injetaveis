@@ -33,10 +33,11 @@ const AboutSection = () => (
         Dra. Isabella <em className="italic text-primary">Tovar</em>
       </h2>
       <p className="text-[0.88rem] text-muted-foreground leading-[1.9] mb-9">
-        Médica especializada em nutrologia e protocolos de suplementação injetável,
-        com abordagem clínica individualizada e baseada em evidências científicas.
-        Cada protocolo é desenhado sob medida, priorizando segurança, eficácia e
-        resultados que respeitam a fisiologia de cada paciente.
+        Médica que entende que o organismo deve ser cuidado de forma integral,
+        sendo que o equilíbrio metabólico, hormonal e nutricional são fundamentos
+        da homeostase. Atua principalmente em tratamentos de emagrecimento,
+        terapia hormonal, implantes hormonais, harmonização corporal e íntima,
+        tratamentos de lipedema, endometriose e saúde integral da mulher.
       </p>
 
       <div className="flex flex-wrap gap-2.5 mb-12">
