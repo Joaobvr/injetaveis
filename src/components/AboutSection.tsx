@@ -40,16 +40,6 @@ const AboutSection = () => (
         tratamentos de lipedema, endometriose e saúde integral da mulher.
       </p>
 
-      <div className="flex flex-wrap gap-2.5 mb-12">
-        {specialties.map((s) => (
-          <span
-            key={s}
-            className="text-[0.68rem] tracking-[0.14em] uppercase text-primary border border-primary/45 px-4 py-1.5"
-          >
-            {s}
-          </span>
-        ))}
-      </div>
 
       <Button variant="darkOutline" size="lg" className="px-10 py-5 h-auto" asChild>
         <a href="#consulta">Saiba mais</a>
