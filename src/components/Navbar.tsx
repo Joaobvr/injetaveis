@@ -7,7 +7,7 @@ const Navbar = () => {
         Dra. <span className="text-primary">Isabella Tovar</span>
       </div>
       <Button variant="goldOutline" size="lg" asChild>
-        <a href="#consulta">Agendar consulta</a>
+        <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar consulta</a>
       </Button>
     </nav>
   );

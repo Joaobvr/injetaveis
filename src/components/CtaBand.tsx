@@ -6,7 +6,7 @@ const CtaBand = () => (
       Seu protocolo <em className="italic">personalizado</em> começa<br className="hidden md:block" /> com uma consulta médica
     </p>
     <Button variant="light" size="lg" className="px-10 py-5 h-auto whitespace-nowrap" asChild>
-      <a href="#consulta">Agendar agora</a>
+      <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar agora</a>
     </Button>
   </section>
 );
