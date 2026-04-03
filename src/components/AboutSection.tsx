@@ -14,9 +14,7 @@ const AboutSection = () => (
     {/* Image placeholder */}
     <div className="relative">
       <div className="w-full aspect-[3/4] bg-warm relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-[0.7rem] tracking-[0.2em] uppercase text-muted-foreground font-sans text-center whitespace-pre">
-          {"FOTO\nDRA. ISABELA"}
-        </div>
+        <img src={draIsabella} alt="Dra. Isabella Tovar" className="w-full h-full object-cover" />
       </div>
       {/* Accent frame */}
       <div className="absolute -bottom-6 -right-6 w-1/2 h-1/2 border border-primary/35 -z-10 hidden lg:block" />
