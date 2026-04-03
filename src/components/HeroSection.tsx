@@ -25,7 +25,7 @@ const HeroSection = () => {
             para resultados reais com segurança absoluta.
           </p>
           <Button variant="gold" size="lg" className="px-10 py-5 h-auto" asChild>
-            <a href="#consulta">
+            <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">
               Agendar minha consulta
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
