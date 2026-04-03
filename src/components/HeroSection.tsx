@@ -15,9 +15,9 @@ const HeroSection = () => {
             Protocolos Injetáveis
           </p>
           <h1 className="section-heading text-[clamp(2.8rem,5vw,4.6rem)] mb-7">
-            Maximize a performance<br />
-            do seu <em className="italic text-primary">metabolismo</em><br />
-            com ciência e precisão
+            Promova o equilíbrio do seu<br />
+            <em className="italic text-primary">organismo</em> e a alta performance<br />
+            metabólica com precisão e segurança
           </h1>
           <p className="text-[0.9rem] font-light text-muted-foreground max-w-[420px] mb-12 tracking-wide leading-[1.85]">
             Protocolos personalizados de suplementação oral e injetável,
