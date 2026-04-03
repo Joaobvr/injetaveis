@@ -37,7 +37,7 @@ const HeroSection = () => {
           <blockquote className="font-serif text-[0.85rem] italic text-muted-foreground border-l-2 border-primary pl-5 mb-9 leading-[1.9]">
             "Tratamentos estratégicos,<br />
             seguros e individualizados,<br />
-            sob indicação médica exclusiva."
+            sob indicação médica."
             <strong className="font-sans text-[0.72rem] not-italic tracking-[0.12em] text-primary block mt-3">
               — Dra. Isabella Tovar
             </strong>
