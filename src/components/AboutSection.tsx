@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import draIsabella from "@/assets/dra-isabella.jpg";
 
 const specialties = [
   "Nutrologia",
