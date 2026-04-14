@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 
 const CtaBand = () => (
-  <section className="bg-primary py-16 px-[6vw] flex flex-col md:flex-row items-center justify-between gap-10">
-    <p className="font-serif text-[clamp(1.5rem,2.5vw,2.2rem)] font-light text-primary-foreground leading-snug text-center md:text-left">
-      Seu protocolo <em className="italic">personalizado</em> começa<br className="hidden md:block" /> com uma consulta médica
-    </p>
-    <Button variant="light" size="lg" className="px-10 py-5 h-auto whitespace-nowrap" asChild>
-      <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar agora</a>
-    </Button>
+  <section className="bg-primary/10 py-16 px-6 md:px-12">
+    <div className="max-w-3xl mx-auto text-center">
+      <p className="font-serif text-[clamp(1.4rem,2.5vw,2rem)] font-light text-foreground leading-snug mb-8">
+        Seu protocolo <em className="italic text-primary">personalizado</em> começa
+        com uma consulta médica
+      </p>
+      <Button variant="sage" size="lg" className="px-12 py-5 h-auto" asChild>
+        <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar agora</a>
+      </Button>
+    </div>
   </section>
 );
 

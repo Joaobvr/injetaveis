@@ -1,48 +1,33 @@
 import { Button } from "@/components/ui/button";
 import draIsabella from "@/assets/dra-isabella.jpg";
 
-const specialties = [
-  "Nutrologia",
-  "Protocolos Injetáveis",
-  "Emagrecimento",
-  "Performance",
-  "Longevidade",
-];
-
 const AboutSection = () => (
-  <section className="px-[6vw] py-28 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-    {/* Image placeholder */}
-    <div className="relative">
-      <div className="w-full aspect-[3/4] bg-warm relative overflow-hidden">
-        <img src={draIsabella} alt="Dra. Isabella Tovar" className="w-full h-full object-cover" />
+  <section className="px-6 md:px-12 py-24">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Image */}
+      <div className="relative flex justify-center">
+        <div className="w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+          <img src={draIsabella} alt="Dra. Isabella Tovar" className="w-full h-full object-cover object-top" />
+        </div>
       </div>
-      {/* Accent frame */}
-      <div className="absolute -bottom-6 -right-6 w-1/2 h-1/2 border border-primary/35 -z-10 hidden lg:block" />
-      {/* Vertical tag */}
-      <div className="absolute top-8 -left-7 bg-primary text-primary-foreground text-[0.65rem] tracking-[0.18em] uppercase px-4 py-2.5 hidden lg:block"
-        style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
-        Especialista
+
+      {/* Text */}
+      <div>
+        <p className="eyebrow mb-5">Conheça a especialista</p>
+        <h2 className="section-heading text-[clamp(1.8rem,3vw,2.6rem)] mb-7">
+          Dra. Isabella <em className="italic text-primary">Tovar</em>
+        </h2>
+        <p className="text-[0.9rem] text-muted-foreground leading-[1.9] mb-10">
+          Médica que entende que o organismo deve ser cuidado de forma integral,
+          sendo que o equilíbrio metabólico, hormonal e nutricional são fundamentos
+          da homeostase. Atua principalmente em tratamentos de emagrecimento,
+          terapia hormonal, implantes hormonais, harmonização corporal e íntima,
+          tratamentos de lipedema, endometriose e saúde integral da mulher.
+        </p>
+        <Button variant="sageOutline" size="lg" className="px-10 py-5 h-auto" asChild>
+          <a href="#consulta">Saiba mais</a>
+        </Button>
       </div>
-    </div>
-
-    {/* Text */}
-    <div>
-      <p className="eyebrow mb-5">Conheça a especialista</p>
-      <h2 className="section-heading text-[clamp(2rem,3vw,2.8rem)] mb-7">
-        Dra. Isabella <em className="italic text-primary">Tovar</em>
-      </h2>
-      <p className="text-[0.88rem] text-muted-foreground leading-[1.9] mb-9">
-        Médica que entende que o organismo deve ser cuidado de forma integral,
-        sendo que o equilíbrio metabólico, hormonal e nutricional são fundamentos
-        da homeostase. Atua principalmente em tratamentos de emagrecimento,
-        terapia hormonal, implantes hormonais, harmonização corporal e íntima,
-        tratamentos de lipedema, endometriose e saúde integral da mulher.
-      </p>
-
-
-      <Button variant="darkOutline" size="lg" className="px-10 py-5 h-auto" asChild>
-        <a href="#consulta">Saiba mais</a>
-      </Button>
     </div>
   </section>
 );
