@@ -8,7 +8,7 @@ const protocols = [
   "Desinflamação Sistêmica",
   "Revitalização Energética",
   "Imunidade Avançada",
-  "Skin Glow",
+  "Qualidade do Sono",
 ];
 
 const ProtocolsSection = () => (
