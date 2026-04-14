@@ -2,12 +2,14 @@ import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[6vw] py-5 bg-background/88 backdrop-blur-xl border-b border-primary/15">
-      <div className="font-serif text-[1.15rem] font-medium tracking-[0.12em] uppercase text-foreground">
-        Dra. <span className="text-primary">Isabella Tovar</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-background/90 backdrop-blur-xl">
+      <div className="font-serif text-lg font-medium tracking-wider text-foreground">
+        Dra. Isabella <span className="text-primary">Tovar</span>
       </div>
-      <Button variant="goldOutline" size="lg" asChild>
-        <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar consulta</a>
+      <Button variant="sage" size="lg" className="px-8" asChild>
+        <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">
+          Agendar Avaliação
+        </a>
       </Button>
     </nav>
   );
