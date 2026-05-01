@@ -5,10 +5,13 @@ const AboutSection = () => (
   <section className="px-6 md:px-12 py-24">
     <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       {/* Image */}
-      <div className="relative flex justify-center">
+      <div className="relative flex flex-col items-center">
         <div className="w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
           <img src={draIsabella} alt="Dra. Isabella Tovar" className="w-full h-full object-cover object-top" />
         </div>
+        <p className="mt-4 text-[0.78rem] tracking-[0.15em] uppercase text-muted-foreground text-center">
+          Dra. Isabella Tovar <span className="text-primary">|</span> Médica CRM 27286 GO
+        </p>
       </div>
 
       {/* Text */}
