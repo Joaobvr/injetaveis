@@ -26,7 +26,7 @@ const HeroSection = () => {
           </span>
         </p>
         <Button variant="sage" size="lg" className="px-12 py-6 h-auto text-[0.8rem]" asChild>
-          <a href="https://wa.me/556296093076" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/556296093076" target="_top">
             Agendar Avaliação
           </a>
         </Button>
