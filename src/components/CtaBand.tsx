@@ -8,7 +8,7 @@ const CtaBand = () => (
         com uma consulta médica
       </p>
       <Button variant="sage" size="lg" className="px-12 py-5 h-auto" asChild>
-        <a href="https://wa.me/556296093076" target="_blank" rel="noopener noreferrer">Agendar agora</a>
+        <a href="https://wa.me/556296093076" target="_top">Agendar agora</a>
       </Button>
     </div>
   </section>
