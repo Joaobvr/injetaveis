@@ -60,6 +60,10 @@ export default {
           DEFAULT: "hsl(var(--cream))",
           dark: "hsl(var(--cream-dark))",
         },
+        peach: {
+          DEFAULT: "hsl(var(--peach))",
+          dark: "hsl(var(--peach-dark))",
+        },
         warm: "hsl(var(--warm))",
         deep: "hsl(var(--deep))",
         charcoal: "hsl(var(--charcoal))",
