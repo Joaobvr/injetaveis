@@ -15,7 +15,7 @@ const FinalCta = () => (
         Agende sua consulta e descubra o tratamento ideal para o seu corpo.
       </p>
       <Button variant="sage" size="lg" className="px-14 py-6 h-auto text-[0.78rem] tracking-[0.2em]" asChild>
-        <a href="https://wa.me/5562996093076" target="_blank" rel="noopener noreferrer">Agendar consulta</a>
+        <a href="https://wa.me/556296093076" target="_blank" rel="noopener noreferrer">Agendar consulta</a>
       </Button>
     </div>
   </section>
