@@ -6,45 +6,47 @@
 
 @layer base {
   :root {
-    --background: 40 30% 97%;
-    --foreground: 25 15% 15%;
+    --background: 36 33% 96%;
+    --foreground: 80 10% 14%;
 
-    --card: 40 30% 97%;
-    --card-foreground: 25 15% 15%;
+    --card: 36 33% 96%;
+    --card-foreground: 80 10% 14%;
 
-    --popover: 40 30% 97%;
-    --popover-foreground: 25 15% 15%;
+    --popover: 36 33% 96%;
+    --popover-foreground: 80 10% 14%;
 
-    --primary: 100 18% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 82 16% 42%;
+    --primary-foreground: 36 33% 97%;
 
-    --secondary: 40 20% 92%;
-    --secondary-foreground: 25 15% 15%;
+    --secondary: 20 45% 88%;
+    --secondary-foreground: 80 10% 14%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 25 10% 45%;
+    --muted: 36 20% 91%;
+    --muted-foreground: 80 6% 38%;
 
-    --accent: 100 18% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 18 55% 82%;
+    --accent-foreground: 80 12% 18%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 36 33% 97%;
 
-    --border: 40 18% 88%;
-    --input: 40 18% 88%;
-    --ring: 100 18% 58%;
+    --border: 36 18% 86%;
+    --input: 36 18% 86%;
+    --ring: 82 16% 42%;
 
     --radius: 12px;
 
-    /* Custom tokens */
-    --sage: 100 18% 58%;
-    --sage-dark: 100 18% 48%;
-    --sage-light: 100 18% 72%;
-    --cream: 40 30% 97%;
-    --cream-dark: 40 20% 92%;
-    --warm: 30 15% 95%;
-    --deep: 25 15% 15%;
-    --charcoal: 25 12% 22%;
+    /* Custom tokens — olive/moss/peach/off-white palette */
+    --sage: 82 16% 42%;          /* olive */
+    --sage-dark: 85 18% 28%;     /* moss */
+    --sage-light: 80 14% 62%;    /* light olive */
+    --peach: 18 55% 82%;         /* rose peach */
+    --peach-dark: 16 45% 70%;
+    --cream: 36 33% 96%;         /* off-white */
+    --cream-dark: 36 22% 90%;
+    --warm: 30 22% 93%;
+    --deep: 80 12% 16%;
+    --charcoal: 85 14% 20%;
 
     --font-serif: 'Cormorant Garamond', serif;
     --font-sans: 'Jost', sans-serif;
