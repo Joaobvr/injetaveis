@@ -60,6 +60,10 @@ const ProtocolsSection = () => (
               ? "Protocolo de suplementação que otimiza a atividade do sistema imune"
               : isSono
               ? "Protocolos personalizados que contribuem com um sono reparador"
+              : isPlusBariatrico
+              ? null
+              : isPlusVegano
+              ? null
               : null;
 
             const card = (
