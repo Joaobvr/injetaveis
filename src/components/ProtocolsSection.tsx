@@ -15,6 +15,8 @@ const protocols = [
   "Revitalização Energética",
   "Imunidade Avançada",
   "Qualidade do Sono",
+  "Plus Bariátrico",
+  "Plus Vegano",
 ];
 
 const ProtocolsSection = () => (
