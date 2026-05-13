@@ -16,7 +16,7 @@ const protocols = [
   "Imunidade Avançada",
   "Qualidade do Sono",
   "Plus Bariátrico",
-  "Plus Vegano",
+  "Emagrecimento Sem Déficit",
 ];
 
 const ProtocolsSection = () => (
