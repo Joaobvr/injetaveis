@@ -33,6 +33,31 @@ const ProtocolsSection = () => (
           {protocols.map((name) => {
             const isAcelerador = name === "Acelerador Metabólico";
             const isBoostCapilar = name === "Boost Capilar";
+            const isGanhoMassa = name === "Ganho de Massa Muscular";
+            const isDetox = name === "Detox Hepático";
+            const isDesinflamacao = name === "Desinflamação Sistêmica";
+            const isRevitalizacao = name === "Revitalização Energética";
+            const isImunidade = name === "Imunidade Avançada";
+            const isSono = name === "Qualidade do Sono";
+
+            const tooltipContent = isAcelerador
+              ? "Protocolos ajustados à necessidade do seu organismo para otimizar a metabolização de carboidratos e gorduras"
+              : isBoostCapilar
+              ? "Combinação de suplementos que atuam na prevenção e tratamento de queda capilar no emagrecimento"
+              : isGanhoMassa
+              ? "Protocolos que contribuem com a disponibilidade de aminoácidos e estimulam processos anabólicos no tecido muscular"
+              : isDetox
+              ? "Suplementação com cofatores enzimáticos e antioxidantes que contribuem com a neutralização de toxinas e saúde do fígado"
+              : isDesinflamacao
+              ? "Protocolos estruturados para reduzir inflamação crônica, neutralizar radicais livres e reduzir degradação celular"
+              : isRevitalizacao
+              ? "Otimizar atividade mitocondrial e metabólica que contribuem com disposição e bem-estar"
+              : isImunidade
+              ? "Protocolo de suplementação que otimiza a atividade do sistema imune"
+              : isSono
+              ? "Protocolo que contribuem com um sono reparador"
+              : null;
+
             const card = (
               <div
                 key={name}
@@ -47,7 +72,7 @@ const ProtocolsSection = () => (
               </div>
             );
 
-            if (isAcelerador) {
+            if (tooltipContent) {
               return (
                 <Tooltip key={name}>
                   <TooltipTrigger asChild>{card}</TooltipTrigger>
@@ -55,27 +80,7 @@ const ProtocolsSection = () => (
                     side="top"
                     className="max-w-xs text-center bg-popover text-popover-foreground"
                   >
-                    <p>
-                      Protocolos ajustados à necessidade do seu organismo para
-                      otimizar a metabolização de carboidratos e gorduras
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
-              );
-            }
-
-            if (isBoostCapilar) {
-              return (
-                <Tooltip key={name}>
-                  <TooltipTrigger asChild>{card}</TooltipTrigger>
-                  <TooltipContent
-                    side="top"
-                    className="max-w-xs text-center bg-popover text-popover-foreground"
-                  >
-                    <p>
-                      Combinação de suplementos que atuam na prevenção e
-                      tratamento de queda capilar no emagrecimento
-                    </p>
+                    <p>{tooltipContent}</p>
                   </TooltipContent>
                 </Tooltip>
               );
