@@ -1,4 +1,10 @@
 import { Check } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const protocols = [
   "Acelerador Metabólico",
@@ -22,19 +28,43 @@ const ProtocolsSection = () => (
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {protocols.map((name) => (
-          <div
-            key={name}
-            className="flex items-center gap-3 bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
-          >
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
-              <Check className="w-4 h-4 text-primary" />
-            </div>
-            <span className="text-[0.9rem] text-foreground font-light">{name}</span>
-          </div>
-        ))}
-      </div>
+      <TooltipProvider delayDuration={200}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {protocols.map((name) => {
+            const isAcelerador = name === "Acelerador Metabólico";
+            const card = (
+              <div
+                key={name}
+                className="flex items-center gap-3 bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+              >
+                <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Check className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-[0.9rem] text-foreground font-light">
+                  {name}
+                </span>
+              </div>
+            );
+
+            return isAcelerador ? (
+              <Tooltip key={name}>
+                <TooltipTrigger asChild>{card}</TooltipTrigger>
+                <TooltipContent
+                  side="top"
+                  className="max-w-xs text-center bg-popover text-popover-foreground"
+                >
+                  <p>
+                    Protocolos ajustados à necessidade do seu organismo para
+                    otimizar a metabolização de carboidratos e gorduras
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            ) : (
+              card
+            );
+          })}
+        </div>
+      </TooltipProvider>
 
       <p className="text-center text-muted-foreground text-[0.82rem] mt-10">
         Cada tratamento é definido após avaliação médica individual.
