@@ -16,7 +16,7 @@ const protocols = [
   "Imunidade Avançada",
   "Qualidade do Sono",
   "Plus Bariátrico",
-  "Plus Vegano",
+  "Emagrecimento Sem Déficit",
 ];
 
 const ProtocolsSection = () => (
@@ -42,7 +42,7 @@ const ProtocolsSection = () => (
             const isImunidade = name === "Imunidade Avançada";
             const isSono = name === "Qualidade do Sono";
             const isPlusBariatrico = name === "Plus Bariátrico";
-            const isPlusVegano = name === "Plus Vegano";
+            const isPlusVegano = name === "Emagrecimento Sem Déficit";
 
             const tooltipContent = isAcelerador
               ? "Protocolos ajustados à necessidade do seu organismo para otimizar a metabolização de carboidratos e gorduras"
