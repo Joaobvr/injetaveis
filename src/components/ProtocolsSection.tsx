@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 const protocols = [
@@ -33,90 +39,73 @@ const ProtocolsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {protocols.map((protocol, index) => {
-            const isOpen = activeIndex === index;
+        <TooltipProvider delayDuration={200}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {protocols.map((protocol, index) => {
+              const isOpen = activeIndex === index;
 
-            return (
-              <div
-                key={protocol.name}
-                data-desc={protocol.description}
-                onClick={() => toggle(index)}
-                className={cn(
-                  "group relative cursor-pointer select-none bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
-                  isOpen && "ring-1 ring-primary/30 shadow-md"
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-primary" />
+              const cardBody = (
+                <>
+                  <div className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-[0.9rem] text-foreground font-light flex-1">
+                      {protocol.name}
+                    </span>
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 text-muted-foreground transition-transform duration-200 sm:hidden",
+                        isOpen && "rotate-180"
+                      )}
+                    />
                   </div>
-                  <span className="text-[0.9rem] text-foreground font-light flex-1">
-                    {protocol.name}
-                  </span>
-                  <ChevronDown
+
+                  {/* Mobile / touch expanded description */}
+                  <div
                     className={cn(
-                      "w-4 h-4 text-muted-foreground transition-transform duration-200 sm:hidden",
-                      isOpen && "rotate-180"
+                      "grid transition-all duration-200 sm:hidden",
+                      isOpen ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"
                     )}
-                  />
-                </div>
-
-                {/* Mobile expanded description */}
-                <div
-                  className={cn(
-                    "grid transition-all duration-200 sm:hidden",
-                    isOpen ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"
-                  )}
-                >
-                  <div className="overflow-hidden">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {protocol.description}
-                    </p>
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {protocol.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                </>
+              );
+
+              return (
+                <Tooltip key={protocol.name}>
+                  <TooltipTrigger asChild>
+                    <div
+                      onClick={() => toggle(index)}
+                      className={cn(
+                        "cursor-pointer select-none bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
+                        isOpen && "sm:shadow-md sm:-translate-y-0.5"
+                      )}
+                    >
+                      {cardBody}
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent
+                    side="top"
+                    className="max-w-xs text-center bg-popover text-popover-foreground hidden sm:block"
+                  >
+                    <p>{protocol.description}</p>
+                  </TooltipContent>
+                </Tooltip>
+              );
+            })}
+          </div>
+        </TooltipProvider>
 
         <p className="text-center text-muted-foreground text-[0.82rem] mt-10">
           Cada tratamento é definido após avaliação médica individual.
         </p>
       </div>
-
-      {/* Desktop CSS hover tooltips */}
-      <style>{`
-        @media (min-width: 640px) {
-          #protocolos .grid > div[data-desc]::after {
-            content: attr(data-desc);
-            position: absolute;
-            left: 50%;
-            bottom: calc(100% + 8px);
-            transform: translateX(-50%) scale(0.95);
-            width: max-content;
-            max-width: 280px;
-            padding: 10px 14px;
-            background: hsl(var(--popover));
-            color: hsl(var(--popover-foreground));
-            border: 1px solid hsl(var(--border));
-            border-radius: 8px;
-            font-size: 0.82rem;
-            line-height: 1.4;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.15s ease, transform 0.15s ease;
-            z-index: 50;
-            white-space: normal;
-          }
-          #protocolos .grid > div[data-desc]:hover::after {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-          }
-        }
-      `}</style>
     </section>
   );
 };
