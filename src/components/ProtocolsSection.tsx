@@ -40,9 +40,10 @@ const ProtocolsSection = () => {
             return (
               <div
                 key={protocol.name}
+                data-desc={protocol.description}
                 onClick={() => toggle(index)}
                 className={cn(
-                  "cursor-pointer select-none bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
+                  "group relative cursor-pointer select-none bg-cream-dark rounded-xl px-5 py-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
                   isOpen && "ring-1 ring-primary/30 shadow-md"
                 )}
               >
@@ -61,7 +62,7 @@ const ProtocolsSection = () => {
                   />
                 </div>
 
-                {/* Mobile / touch expanded description */}
+                {/* Mobile expanded description */}
                 <div
                   className={cn(
                     "grid transition-all duration-200 sm:hidden",
@@ -74,66 +75,49 @@ const ProtocolsSection = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Desktop tooltip via CSS group-hover */}
-                <div className="hidden sm:block relative">
-                  <div className="absolute left-0 right-0 top-2 z-10 pointer-events-none opacity-0 group-hover:opacity-0">
-                    {/* placeholder to reserve hover area */}
-                  </div>
-                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Desktop: use data attributes for CSS hover tooltips injected via a styled overlay */}
-        <DesktopTooltips />
-
         <p className="text-center text-muted-foreground text-[0.82rem] mt-10">
           Cada tratamento é definido após avaliação médica individual.
         </p>
       </div>
-    </section>
-  );
-};
 
-/* Separate inline tooltip layer for desktop hover */
-const DesktopTooltips = () => {
-  return (
-    <style>{`
-      @media (min-width: 640px) {
-        #protocolos .grid > div {
-          position: relative;
+      {/* Desktop CSS hover tooltips */}
+      <style>{`
+        @media (min-width: 640px) {
+          #protocolos .grid > div[data-desc]::after {
+            content: attr(data-desc);
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 8px);
+            transform: translateX(-50%) scale(0.95);
+            width: max-content;
+            max-width: 280px;
+            padding: 10px 14px;
+            background: hsl(var(--popover));
+            color: hsl(var(--popover-foreground));
+            border: 1px solid hsl(var(--border));
+            border-radius: 8px;
+            font-size: 0.82rem;
+            line-height: 1.4;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            z-index: 50;
+            white-space: normal;
+          }
+          #protocolos .grid > div[data-desc]:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+          }
         }
-        #protocolos .grid > div::after {
-          content: attr(data-desc);
-          position: absolute;
-          left: 50%;
-          bottom: calc(100% + 8px);
-          transform: translateX(-50%) scale(0.95);
-          width: max-content;
-          max-width: 280px;
-          padding: 10px 14px;
-          background: hsl(var(--popover));
-          color: hsl(var(--popover-foreground));
-          border: 1px solid hsl(var(--border));
-          border-radius: 8px;
-          font-size: 0.82rem;
-          line-height: 1.4;
-          text-align: center;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.15s ease, transform 0.15s ease;
-          z-index: 50;
-          white-space: normal;
-        }
-        #protocolos .grid > div:hover::after {
-          opacity: 1;
-          transform: translateX(-50%) scale(1);
-        }
-      }
-    `}</style>
+      `}</style>
+    </section>
   );
 };
 
