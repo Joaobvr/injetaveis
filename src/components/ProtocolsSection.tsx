@@ -61,9 +61,9 @@ const ProtocolsSection = () => (
               : isSono
               ? "Protocolos personalizados que contribuem com um sono reparador"
               : isPlusBariatrico
-              ? null
+              ? "Protocolos para ajuste ou manutenção nutricional de bariátricos"
               : isPlusVegano
-              ? null
+              ? "Protocolos para equalizar nutrientes e prevenir efeitos indesejáveis no emagrecimento"
               : null;
 
             const card = (
