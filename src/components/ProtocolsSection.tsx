@@ -15,6 +15,8 @@ const protocols = [
   "Revitalização Energética",
   "Imunidade Avançada",
   "Qualidade do Sono",
+  "Plus Bariátrico",
+  "Plus Vegano",
 ];
 
 const ProtocolsSection = () => (
@@ -39,6 +41,8 @@ const ProtocolsSection = () => (
             const isRevitalizacao = name === "Revitalização Energética";
             const isImunidade = name === "Imunidade Avançada";
             const isSono = name === "Qualidade do Sono";
+            const isPlusBariatrico = name === "Plus Bariátrico";
+            const isPlusVegano = name === "Plus Vegano";
 
             const tooltipContent = isAcelerador
               ? "Protocolos ajustados à necessidade do seu organismo para otimizar a metabolização de carboidratos e gorduras"
@@ -56,6 +60,10 @@ const ProtocolsSection = () => (
               ? "Protocolo de suplementação que otimiza a atividade do sistema imune"
               : isSono
               ? "Protocolos personalizados que contribuem com um sono reparador"
+              : isPlusBariatrico
+              ? null
+              : isPlusVegano
+              ? null
               : null;
 
             const card = (
