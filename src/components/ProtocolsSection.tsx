@@ -32,6 +32,7 @@ const ProtocolsSection = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {protocols.map((name) => {
             const isAcelerador = name === "Acelerador Metabólico";
+            const isBoostCapilar = name === "Boost Capilar";
             const card = (
               <div
                 key={name}
@@ -46,22 +47,41 @@ const ProtocolsSection = () => (
               </div>
             );
 
-            return isAcelerador ? (
-              <Tooltip key={name}>
-                <TooltipTrigger asChild>{card}</TooltipTrigger>
-                <TooltipContent
-                  side="top"
-                  className="max-w-xs text-center bg-popover text-popover-foreground"
-                >
-                  <p>
-                    Protocolos ajustados à necessidade do seu organismo para
-                    otimizar a metabolização de carboidratos e gorduras
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            ) : (
-              card
-            );
+            if (isAcelerador) {
+              return (
+                <Tooltip key={name}>
+                  <TooltipTrigger asChild>{card}</TooltipTrigger>
+                  <TooltipContent
+                    side="top"
+                    className="max-w-xs text-center bg-popover text-popover-foreground"
+                  >
+                    <p>
+                      Protocolos ajustados à necessidade do seu organismo para
+                      otimizar a metabolização de carboidratos e gorduras
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              );
+            }
+
+            if (isBoostCapilar) {
+              return (
+                <Tooltip key={name}>
+                  <TooltipTrigger asChild>{card}</TooltipTrigger>
+                  <TooltipContent
+                    side="top"
+                    className="max-w-xs text-center bg-popover text-popover-foreground"
+                  >
+                    <p>
+                      Combinação de suplementos que atuam na prevenção e
+                      tratamento de queda capilar no emagrecimento
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              );
+            }
+
+            return card;
           })}
         </div>
       </TooltipProvider>
