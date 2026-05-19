@@ -7,7 +7,7 @@ const Navbar = () => {
         Dra. Isabella <span className="text-primary">Tovar</span>
       </div>
       <Button variant="sage" size="lg" className="px-8" asChild>
-        <a href="https://wa.me/556296093076" target="_top">
+        <a href="https://wa.me/556296093076" target="_top" onClick={() => (window as any).fbq?.('track', 'Contact')}>
           Agendar Avaliação
         </a>
       </Button>
